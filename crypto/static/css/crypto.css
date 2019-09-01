@@ -1,0 +1,13 @@
+.center-block {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+body {
+	background-image: linear-gradient(#263238, #455A64);
+}
+
+.jumbotron {
+    background: none
+}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<table class="table table-bordered table-dark table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>Volume 24H</th>
+            <th>Change 1H</th>
+            <th>Change 24H</th>
+            <th>Change 7D</th>
+        </tr>
+    </thead>
+    
+    {% for crypto in data %}
+    <tr>
+        <td>{{ crypto.name }}</td>
+        <td>{{ crypto.symbol }}</td>
+        <td>{{ crypto.quote.USD.price|floatformat:2 }}</td>
+        <td>{{ crypto.quote.USD.volume_24h|floatformat:2 }}</td>
+        <td>{{ crypto.quote.USD.percent_change_1h|floatformat:2 }}</td>
+        <td>{{ crypto.quote.USD.percent_change_24h|floatformat:2 }}</td>
+        <td>{{ crypto.quote.USD.percent_change_7d|floatformat:2 }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}
+    
